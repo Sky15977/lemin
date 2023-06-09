@@ -1,0 +1,55 @@
+ALGO: dijkstra
+
+      /* PARSING */
+PASSED >> 01 - Room end given before start
+PASSED >> 02 - Comment at beginning of the file
+PASSED >> 03 - Comment after the nbr of ants
+PASSED >> 04 - Comment in the middle of the rooms definitions
+PASSED >> 05 - Comment in the middle of the rooms definitions (again)
+PASSED >> 06 - Comment after the rooms definitions
+PASSED >> 07 - Comment in the middle of the pipes
+PASSED >> 08 - Comment at the end of the file
+
+09 - Full map parsing >> ??
+keyboard_arrow_right
+
+Test failure: The output must match the regular expression '^OK
+$', but it was 'KO (invalid map parsing)
+'
+      /* PARSING */
+
+
+      /* ROBUSTNESS */
+PASSED >> 01 - Bad ants number
+PASSED >> 02 - No room
+PASSED >> 03 - No start room
+PASSED >> 04 - No end room
+PASSED >> 05 - Multiple start rooms
+PASSED >> 06 - Multiple end rooms
+PASSED >> Multiple rooms with same name
+PASSED >> Multiple rooms with identical coordinates
+PASSED >> 09 - No pipe
+PASSED >> 10 - Pipe from/to room that does not exist
+X >> 11 - Input line containing garbage (not enough informations for simulation) //si mauuvaise info donner
+X >> 13 - No path between start and end
+      /* ROBUSTNESS */
+
+
+faire truc basic 1 start 1 end
+
+      MATTHEW:
+PASSED >> f° pour détecter err_coor || err_name
+PASSED >> Display ants par ants
+
+      LUCAS:
+PASSED >> recup_of_file_content() dans le main l.19, pb de malloc, il faudrait un réaloc
+
+      ARTHUR: OK
+PASSED >> if err_coor ou err_name, arreter le display au bon moment
+PASSED >> if pas de chemin a la room end
+
+
+866
+952 >> tunnel en plus
+
+if charactère dans tunnel ou room, pas de seg-fault mais pb
